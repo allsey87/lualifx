@@ -1,4 +1,5 @@
-require 'lifx_bulb'
+
+require "lifx_bulb"
 
 bulb = LifxBulb:Create('192.168.1.73',
                     56700,
