@@ -87,9 +87,9 @@ function LifxBulb:SetColorRGB(red, green, blue, fade_time)
    local packet = LifxPacket:Create(self.Target,
                                     {0x66, 0x00},
                                     {0x00, 
-                                     hsv_h % 0x100, hsv_h / 0x100, --hue
-                                     hsv_s % 0x100, hsv_s / 0x100, --sat
-                                     hsv_v % 0x100, hsv_v / 0x100, --brightness
+                                     hsv_h % 0x100, math.floor(hsv_h / 0x100), --hue
+                                     hsv_s % 0x100, math.floor(hsv_s / 0x100), --sat
+                                     hsv_v % 0x100, math.floor(hsv_v / 0x100), --brightness
                                      0x00, 0x00, --kelvin
                                      0x00, 0x00, 2 * fade_time, 0x00}) -- fade time
    self:SendPacket(packet)

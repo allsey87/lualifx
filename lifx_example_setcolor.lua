@@ -9,4 +9,6 @@ bulb = LifxBulb:Create('192.168.1.73',
 -- switch on the bulb
 bulb:SwitchOn()
 -- set the color instantly to 0,0,1
-bulb:SetColorRGB(0, 1, 0, 5)
+
+bulb:SetColorRGB(0.08,0.06,0)
+
