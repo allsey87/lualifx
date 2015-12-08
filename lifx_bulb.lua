@@ -27,20 +27,20 @@ end
 function LifxBulb:SwitchOff()
    local packet = LifxPacket:Create(0x14, self.Target, {
                      0x75, 0x00,
-				         0x00, 0x00,
-				         0x00, 0x00,
-				         0x00, 0x00,
-				         0x00, 0x00})
+                     0x00, 0x00,
+                     0x00, 0x00,
+                     0x00, 0x00,
+                     0x00, 0x00})
    self:SendPacket(packet)
 end
 
 function LifxBulb:SwitchOn()
    local packet = LifxPacket:Create(0x14, self.Target, {
                      0x75, 0x00,
-				         0x00, 0x00,
-				         0xff, 0xff,
-				         0x00, 0x00,
-				         0x00, 0x00})
+                     0x00, 0x00,
+                     0xff, 0xff,
+                     0x00, 0x00,
+                     0x00, 0x00})
    self:SendPacket(packet)
 end
 
@@ -77,7 +77,7 @@ function LifxBulb:SetColorHSV(hue, saturation, value, fade_time)
                      hsv_s % 0x100, math.floor(hsv_s / 0x100), --saturation
                      hsv_v % 0x100, math.floor(hsv_v / 0x100), --brightness
                      0xff, 0x00, --kelvin
-				         fade_time_bytes[1], fade_time_bytes[2], --duration
+                     fade_time_bytes[1], fade_time_bytes[2], --duration
                      fade_time_bytes[3], fade_time_bytes[4]})
    self:SendPacket(packet)  
 end       
