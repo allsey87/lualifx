@@ -14,16 +14,20 @@ local bulb = LifxBulb:Create('192.168.1.73',
 local transitions = {
    [1] = {
       duration = 0, -- instantly
-      hsv = {hue = 0.16, sat = 1.00, val = 0.04},
+      hsv = {hue = 0.14, sat = 1.00, val = 0.20},
    },
    [2] = {
-      duration = 900, -- over 15 minutes
-      hsv = {hue = 0.14, sat = 1.00, val = 0.15},
+      duration = 150, -- over 2.5 minutes
+      hsv = {hue = 0.15, sat = 1.00, val = 0.10},
    },
    [3] = {
-      duration = 1800, -- over 30 minutes
-      hsv = {hue = 0.12, sat = 1.00, val = 1.00},
+      duration = 300, -- over 5 minutes
+      hsv = {hue = 0.16, sat = 1.00, val = 0.05},
    },
+   [4] = {
+      duration = 450, -- over 7.5 minutes
+      hsv = {hue = 0.17, sat = 1.00, val = 0.0},
+   }
 }
 
 -- switch bulb on
@@ -44,3 +48,5 @@ for index,transition in ipairs(transitions) do
    end   
 end
 
+-- switch bulb on
+bulb:SwitchOff()
