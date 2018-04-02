@@ -1,4 +1,4 @@
-require 'socket'
+local socket = require 'socket'
 require 'lifx_packet'
 
 LifxBulb = {}

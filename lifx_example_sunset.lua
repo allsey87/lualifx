@@ -7,9 +7,9 @@ local function sleep(n_sec)
 end
 
 -- create a bulb: ip address, port, hardware address
-local bulb = LifxBulb:Create('192.168.1.73',
+local bulb = LifxBulb:Create('10.0.0.2',
                              56700,
-                             {0xD0, 0x73, 0xD5, 0x01, 0x0A, 0x3F})
+                             {0xD0, 0x73, 0xD5, 0x22, 0x7A, 0x0C})
 
 local transitions = {
    [1] = {
